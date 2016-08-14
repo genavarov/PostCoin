@@ -6,7 +6,7 @@ Release Process
 ###update (commit) version in sources
 
 
-	moneta-qt.pro
+	PostCoin-qt.pro
 	contrib/verifysfbinaries/verify.sh
 	doc/README*
 	share/setup.nsi
@@ -49,57 +49,57 @@ Release Process
 	./bin/gbuild ../PostCoin/contrib/gitian-descriptors/qt-win32.yml
 	mv build/out/qt-win32-4.8.5-gitian-r5.zip inputs/
 	./bin/gbuild ../PostCoin/contrib/gitian-descriptors/deps-win32.yml
-	mv build/out/moneta-deps-0.0.5.zip inputs/
+	mv build/out/PostCoin-deps-win32-gitian-r3.zip inputs/
 
- Build monetad and moneta-qt on Linux32, Linux64, and Win32:
+ Build PostCoind and PostCoin-qt on Linux32, Linux64, and Win32:
   
-	./bin/gbuild --commit moneta=v${VERSION} ../moneta/contrib/gitian-descriptors/gitian.yml
-	./bin/gsign --signer $SIGNER --release ${VERSION} --destination ../gitian.sigs/ ../moneta/contrib/gitian-descriptors/gitian.yml
+	./bin/gbuild --commit PostCoin=v${VERSION} ../PostCoin/contrib/gitian-descriptors/gitian.yml
+	./bin/gsign --signer $SIGNER --release ${VERSION} --destination ../gitian.sigs/ ../PostCoin/contrib/gitian-descriptors/gitian.yml
 	pushd build/out
-	zip -r moneta-${VERSION}-linux-gitian.zip *
-	mv moneta-${VERSION}-linux-gitian.zip ../../
+	zip -r PostCoin-${VERSION}-linux-gitian.zip *
+	mv PostCoin-${VERSION}-linux-gitian.zip ../../
 	popd
-	./bin/gbuild --commit moneta=v${VERSION} ../moneta/contrib/gitian-descriptors/gitian-win32.yml
-	./bin/gsign --signer $SIGNER --release ${VERSION}-win32 --destination ../gitian.sigs/ ../moneta/contrib/gitian-descriptors/gitian-win32.yml
+	./bin/gbuild --commit PostCoin=v${VERSION} ../PostCoin/contrib/gitian-descriptors/gitian-win32.yml
+	./bin/gsign --signer $SIGNER --release ${VERSION}-win32 --destination ../gitian.sigs/ ../PostCoin/contrib/gitian-descriptors/gitian-win32.yml
 	pushd build/out
-	zip -r moneta-${VERSION}-win32-gitian.zip *
-	mv moneta-${VERSION}-win32-gitian.zip ../../
+	zip -r PostCoin-${VERSION}-win32-gitian.zip *
+	mv PostCoin-${VERSION}-win32-gitian.zip ../../
 	popd
 
   Build output expected:
 
-  1. linux 32-bit and 64-bit binaries + source (moneta-${VERSION}-linux-gitian.zip)
-  2. windows 32-bit binary, installer + source (moneta-${VERSION}-win32-gitian.zip)
+  1. linux 32-bit and 64-bit binaries + source (PostCoin-${VERSION}-linux-gitian.zip)
+  2. windows 32-bit binary, installer + source (PostCoin-${VERSION}-win32-gitian.zip)
   3. Gitian signatures (in gitian.sigs/${VERSION}[-win32]/(your gitian key)/
 
 repackage gitian builds for release as stand-alone zip/tar/installer exe
 
 **Linux .tar.gz:**
 
-	unzip moneta-${VERSION}-linux-gitian.zip -d moneta-${VERSION}-linux
-	tar czvf moneta-${VERSION}-linux.tar.gz moneta-${VERSION}-linux
-	rm -rf moneta-${VERSION}-linux
+	unzip PostCoin-${VERSION}-linux-gitian.zip -d PostCoin-${VERSION}-linux
+	tar czvf PostCoin-${VERSION}-linux.tar.gz PostCoin-${VERSION}-linux
+	rm -rf PostCoin-${VERSION}-linux
 
 **Windows .zip and setup.exe:**
 
-	unzip moneta-${VERSION}-win32-gitian.zip -d moneta-${VERSION}-win32
-	mv moneta-${VERSION}-win32/moneta-*-setup.exe .
-	zip -r moneta-${VERSION}-win32.zip bitcoin-${VERSION}-win32
-	rm -rf moneta-${VERSION}-win32
+	unzip PostCoin-${VERSION}-win32-gitian.zip -d PostCoin-${VERSION}-win32
+	mv PostCoin-${VERSION}-win32/PostCoin-*-setup.exe .
+	zip -r PostCoin-${VERSION}-win32.zip bitcoin-${VERSION}-win32
+	rm -rf PostCoin-${VERSION}-win32
 
 **Perform Mac build:**
 
   OSX binaries are created on a dedicated 32-bit, OSX 10.6.8 machine.
-  moneta 0.8.x is built with MacPorts.  0.9.x will be Homebrew only.
+  PostCoin 0.8.x is built with MacPorts.  0.9.x will be Homebrew only.
 
-	qmake RELEASE=1 USE_UPNP=1 USE_QRCODE=1 moneta-qt.pro
+	qmake RELEASE=1 USE_UPNP=1 USE_QRCODE=1 PostCoin-qt.pro
 	make
 	export QTDIR=/opt/local/share/qt4  # needed to find translations/qt_*.qm files
 	T=$(contrib/qt_translations.py $QTDIR/translations src/qt/locale)
 	python2.7 share/qt/clean_mac_info_plist.py
-	python2.7 contrib/macdeploy/macdeployqtplus moneta-Qt.app -add-qt-tr $T -dmg -fancy contrib/macdeploy/fancy.plist
+	python2.7 contrib/macdeploy/macdeployqtplus PostCoin-Qt.app -add-qt-tr $T -dmg -fancy contrib/macdeploy/fancy.plist
 
- Build output expected: moneta-Qt.dmg
+ Build output expected: PostCoin-Qt.dmg
 
 ###Next steps:
 
