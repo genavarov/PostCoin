@@ -1139,8 +1139,11 @@ void MapPort()
 // The first name is used as information source for addrman.
 // The second name should resolve to a list of seed addresses.
 static const char *strDNSSeed[][2] = {
-    	{"23.97.150.222","postnode.cloudapp.net"},
-		{"postnode.cloudapp.net","postnode.cloudapp.net"},
+    	{"14.141.223.14","14.141.223.14"},
+		{"node.postcoin.pw","node.postcoin.pw"},
+		{"node1.postcoin.pw","node1.postcoin.pw"},
+		{"node2.postcoin.pw","node2.postcoin.pw"},
+		{"node3.postcoin.pw","node3.postcoin.pw"},
 		{"23.97.150.222","23.97.150.222"}
 };
 
@@ -1217,14 +1220,13 @@ unsigned int pnSeed[] =
     0xb95d4419, 0x62c75586, 0x5daaa84a, 0x974dfc00, 0x2ed35cd0,
     0x4fdf52f7, 0x18b81355, 0x728f5343, 0x28718af5, 0x6bbdedb1,
     0x7d10492e, 0x5e22b9e6, 0x5f45e461, 0xadc77ca6, 0x4f8ecb8b,
-    0xdf4bd379, 0x7934d29b, 0x26bc02ad, 0x7ab743ad, 0x0ab3a7bc,
-    0x375ab5bc, 0xc90b1617, 0x5352fd17, 0x5efc6c18, 0xccdc7d18,
-    0x443d9118, 0x84031b18, 0x347c1e18, 0x86512418, 0xfcfe9031,
-    0xdb5eb936, 0xef8d2e3a, 0xcf51f23c, 0x18ab663e, 0x36e0df40,
-    0xde48b641, 0xad3e4e41, 0xd0f32b44, 0x09733b44, 0x6a51f545,
-    0xe593ef48, 0xc5f5ef48, 0x96f4f148, 0xd354d34a, 0x36206f4c,
-    0xceefe953, 0x50468c55, 0x89d38d55, 0x65e61a5a, 0x16b1b95d,
-    0x702b135e, 0x0f57245e, 0xdaab5f5f, 0xba15ef63,
+    0x1f2821bc, 0x4d7b2764, 0x50f0314f, 0x4d6a4668, 0x0558e226,
+    0xd56f95c6, 0x2e49d337, 0x5435c7b5, 0x5d5cb595, 0x0e8ddf0e,
+    0x5f439f18, 0x58a55869, 0x6d576b90, 0x52d046bf, 0xbca36b42,
+    0x5e2d4ebf, 0x18c84203, 0x36c974df, 0x5c7c732d, 0xb0703419,
+    0x804b99e4, 0x58ceba3a, 0xbcebffa1, 0xb07a782c, 0x54fb10ad,
+    0x6da27cbb, 0xbcd6ce14, 0x9eb5f11a, 0x2e93a90a, 0x17e3ac2e,
+	0x176196de, 0xc22ca566
 };
 
 void DumpAddresses()
