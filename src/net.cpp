@@ -362,17 +362,17 @@ bool GetMyExternalIP(CNetAddr& ipRet)
         //  <?php echo $_SERVER["REMOTE_ADDR"]; ?>
         if (nHost == 1)
         {
-            addrConnect = CService("192.168.43.6",80); // checkip.dyndns.org
+            addrConnect = CService("107.20.249.176", 80); // checkip.amazonaws.com
 
             if (nLookup == 1)
             {
-                CService addrIP("checkip.dyndns.org", 80, true);
+                CService addrIP("checkip.amazonaws.com", 80, true);
                 if (addrIP.IsValid())
                     addrConnect = addrIP;
             }
 
             pszGet = "GET / HTTP/1.1\r\n"
-                     "Host: checkip.dyndns.org\r\n"
+                     "Host: checkip.amazonaws.com\r\n"
                      "User-Agent: PostCoin\r\n"
                      "Connection: close\r\n"
                      "\r\n";
@@ -381,17 +381,17 @@ bool GetMyExternalIP(CNetAddr& ipRet)
         }
         else if (nHost == 2)
         {
-            addrConnect = CService("188.146.70.87", 80); // www.showmyip.com
+            addrConnect = CService("64.182.208.181", 80); // icanhazip.com
 
             if (nLookup == 1)
             {
-                CService addrIP("www.showmyip.com", 80, true);
+                CService addrIP("icanhazip.com", 80, true);
                 if (addrIP.IsValid())
                     addrConnect = addrIP;
             }
 
-            pszGet = "GET /simple/ HTTP/1.1\r\n"
-                     "Host: www.showmyip.com\r\n"
+            pszGet = "GET / HTTP/1.1\r\n"
+                     "Host: icanhazip.com\r\n"
                      "User-Agent: PostCoin\r\n"
                      "Connection: close\r\n"
                      "\r\n";
@@ -1139,7 +1139,7 @@ void MapPort()
 // The first name is used as information source for addrman.
 // The second name should resolve to a list of seed addresses.
 static const char *strDNSSeed[][2] = {
-    	{"14.141.223.14","14.141.223.14"},
+    	{"5.45.66.18","5.45.66.18"},
 	{"node.postcoin.pw","node.postcoin.pw"},
 	{"node1.postcoin.pw","node1.postcoin.pw"},
 	{"node2.postcoin.pw","node2.postcoin.pw"},
