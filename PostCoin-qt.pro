@@ -15,20 +15,20 @@ greaterThan(QT_MAJOR_VERSION, 4) {
 }
 
 win32 {
-			BOOST_LIB_SUFFIX=-mgw49-mt-s-1_55
-			BOOST_INCLUDE_PATH=C:/deps/boost_1_55_0
-			BOOST_LIB_PATH=C:/deps/boost_1_55_0/stage/lib
-			BDB_INCLUDE_PATH=C:/deps/db-4.8.30.NC/build_unix
-			BDB_LIB_PATH=C:/deps/db-4.8.30.NC/build_unix
-			OPENSSL_INCLUDE_PATH=C:/deps/openssl-1.0.2d/include
-			OPENSSL_LIB_PATH=C:/deps/openssl-1.0.2d
-			MINIUPNPC_INCLUDE_PATH=C:/deps/miniupnpc
-			MINIUPNPC_LIB_PATH=C:/deps/miniupnpc
-			MINIUPNP_STATICLIB=C:/deps/miniupnpc
-			QRENCODE_INCLUDE_PATH=C:/deps/qrencode-3.4.4
-			QRENCODE_LIB_PATH=C:/deps/qrencode-3.4.4/.libs
-			SECP256K1_LIB_PATH = C:/deps/secp256k1/.libs
-			SECP256K1_INCLUDE_PATH = C:/deps/secp256k1/include 
+		BOOST_LIB_SUFFIX=-mgw49-mt-s-1_55
+		BOOST_INCLUDE_PATH=C:/deps/boost_1_55_0
+		BOOST_LIB_PATH=C:/deps/boost_1_55_0/stage/lib
+		BDB_INCLUDE_PATH=C:/deps/db-4.8.30.NC/build_unix
+		BDB_LIB_PATH=C:/deps/db-4.8.30.NC/build_unix
+		OPENSSL_INCLUDE_PATH=C:/deps/openssl-1.0.1t/include
+		OPENSSL_LIB_PATH=C:/deps/openssl-1.0.1t
+		MINIUPNPC_INCLUDE_PATH=C:/deps/
+		MINIUPNPC_LIB_PATH=C:/deps/miniupnpc
+		MINIUPNP_STATICLIB=C:/deps/miniupnpc
+		QRENCODE_INCLUDE_PATH=C:/deps/qrencode-3.4.4
+		QRENCODE_LIB_PATH=C:/deps/qrencode-3.4.4/.libs
+		SECP256K1_LIB_PATH = C:/deps/secp256k1/.libs
+		SECP256K1_INCLUDE_PATH = C:/deps/secp256k1/include 
 		}
 
 
