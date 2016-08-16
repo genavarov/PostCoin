@@ -5,7 +5,7 @@ SetCompressor /SOLID lzma
 
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
-!define VERSION 1.0.0
+!define VERSION 1.0.2
 !define COMPANY "PostCoin project"
 !define URL http://www.postcoin.pw/
 
@@ -45,13 +45,13 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile PostCoin-1.0.0-win32-setup.exe
+OutFile PostCoin-1.0.2-win32-setup.exe
 InstallDir $PROGRAMFILES\PostCoin
 CRCCheck on
 XPStyle on
 BrandingText " "
 ShowInstDetails show
-VIProductVersion 1.0.0.0
+VIProductVersion 1.0.2.0
 VIAddVersionKey ProductName PostCoin
 VIAddVersionKey ProductVersion "${VERSION}"
 VIAddVersionKey CompanyName "${COMPANY}"
